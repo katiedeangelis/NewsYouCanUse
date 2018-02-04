@@ -1,0 +1,2 @@
+# NewsYouCanUse
+News You Can Use is a web app that utilizes Mongoose and Cheerio to scrape articles from news sites. Each article is checked to ensure it doesn't already exist in the database before saving it to ensure there are no duplicates. The news stories are persisted so that users can continuously view articles and leave comments on the latest stories that they can then come back and access.
