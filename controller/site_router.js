@@ -11,13 +11,10 @@ var request = require("request");
 var router = express.Router();
 
 router.get("/", function (req, res) {
-    res.render("index", {});
+    getNewsArticles(req, res);
 });
 
-console.log(`***********************************
-Grabbing every article name from
-The Wall Street Journal:
-***********************************`);
+function getNewsArticles(req, res) {
 
 request("http://www.aljazeera.com/news/", function (error, response, html) {
 
@@ -53,8 +50,11 @@ request("http://www.aljazeera.com/news/", function (error, response, html) {
         });
     });
 
-    // Log the results once you've looped through each of the elements found with cheerio
-    console.log(results);
+    // Take the response and render it back to the client
+    res.render("index", {
+        article: results
+    });
 });
+}
 
 module.exports = router;
