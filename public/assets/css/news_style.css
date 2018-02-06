@@ -1,5 +1,31 @@
 body {
-    background-image: url(../images/newspaper-stack.jpg);
+    background: #000000;
+}
+
+.row>.col {
+    padding: 0px;
+}
+
+.news-image-banner img {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.news-image-banner.header {
+    position: absolute;
+    font-size: 400%;
+    bottom: 25%;
+    left: 10%;
+    z-index: 2;
+}
+
+.news-image-banner.summary {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    z-index: 2;
 }
 
 .returned-articles {
