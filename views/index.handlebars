@@ -1,19 +1,18 @@
-<h1>News You Can Use!</h1>
-<ul>
-    <lh id="newsArticle">{{#each article}}
-        <li class="returnedArticles">
-            <p>
-                <a href="{{this.articleLink}}">{{this.articleTitle}}</a>
-            </p>
-            <p>
-                <span class="articleSummary">Summary: </span>
-                <span>{{this.articleSummary}}</span>
-            </p>
-            <p>
-                <img src="{{this.articleImage}}" class="articleImage">
-            </p>
-        </li>
-        <br>
-    </lh>
-    {{/each}}
-</ul>
+<div class="row">
+    <nav>
+        <div class="col s12 m12 l12 nav-wrapper orange accent-2">
+            <a href="#" class="brand-logo">News You Can Use</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>
+                    <a href="#">Get News</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="col s12 m12 l12">
+
+        <div class="returned-articles">
+            {{#each article}} {{> news_card}} {{/each}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+body {
+    background-image: url(../images/newspaper-stack.jpg);
+}
+
+.returned-articles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 50px;
+    width: 350px;
+    position: relative;
+}
+
+.card .card-title {
+    font-weight: 800;
+    text-shadow: 1px 1px #000000;
+}
+
+.card-image img {
+    opacity: .7;
+}
