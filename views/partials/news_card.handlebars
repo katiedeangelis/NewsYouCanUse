@@ -2,12 +2,22 @@
     <div class="card-image">
         <img src="{{this.articleImage}}">
         <span class="card-title">{{this.articleTitle}}</span>
-        <a class="btn-floating hoverable halfway-fab waves-effect waves-light orange accent-2"><i class="material-icons" title="Save article">add</i></a>
+        {{#if this.articleWasScraped}}
+            <a class="btn-floating hoverable halfway-fab waves-effect waves-light orange accent-2">
+                <i class="material-icons add" title="Save article">add</i>
+            </a>
+        {{/if}}
+        {{#if this._id}}
+            <a class="btn-floating halfway-fab waves-effect waves-light red">
+                <i class="material-icons remove" data-value="{{this._id}}" title="Delete article">remove</i>
+            </a>
+         {{/if}}
     </div>
     <div class="card-content white-text">
         <p>{{this.articleSummary}}</p>
     </div>
     <div class="card-action">
         <a href="{{this.articleLink}}">More Information</a>
+        {{#if this._id}} {{>saved_news_card}} {{/if}}
     </div>
 </div>

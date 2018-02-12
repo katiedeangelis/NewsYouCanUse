@@ -7,8 +7,8 @@ $('.pushpin-nav').pushpin({
     top: $('.block').offset().top
 });
 
-// Whenever someone clicks a save button
-$(document).on("click", ".material-icons", function () {
+// Whenever someone clicks a save button - save the article
+$(document).on("click", ".material-icons.add", function () {
     let card = $(this).closest(".card");
 
     $.ajax({
@@ -24,6 +24,24 @@ $(document).on("click", ".material-icons", function () {
     }).then(function (data) {
         // Log the response
         console.log(data);
+    });
+
+});
+
+// Whenever someone clicks a delete button - delete the article
+$(document).on("click", ".material-icons.remove", function () {
+    let card = $(this).data("value");
+
+    $.ajax({
+        method: "DELETE",
+        url: "/deletesavedarticle",
+        data: {
+            // Value taken from title input
+            _id: card
+        }
+    }).then(function (data) {
+        // Log the response
+        window.location.reload();
     });
 
 });
