@@ -46,7 +46,8 @@ function getNewsArticles(req, res) {
                 articleTitle: articleTitle,
                 articleSummary: articleSummary,
                 articleImage: `http://www.aljazeera.com${articleImage}`,
-                articleLink: `http://www.aljazeera.com${articleLink}`
+                articleLink: `http://www.aljazeera.com${articleLink}`,
+                articleWasScraped: true
             });
         });
 
@@ -86,5 +87,15 @@ router.post("/savearticle", function (req, res) {
         res.json(err);
     });
 });
+
+router.delete("/deletesavedarticle", function (req, res) {
+    db.Article.remove({ _id: req.body._id }, function (err) {
+        if (err) {
+            res.status(500).end();
+        } else {
+            res.status(200).end();
+        };
+      })
+})
 
 module.exports = router;
