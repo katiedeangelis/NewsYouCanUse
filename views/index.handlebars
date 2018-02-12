@@ -1,16 +1,31 @@
-<div class="row">
-    <div class="col s12 m12 l12 news-image-banner">
+<div class="row intro">
+    <div class="col s12 m12 l12 news-header">
         <div class="news-image-banner header white-text">NEWS YOU CAN USE</div>
         <div class="news-image-banner summary white-text">a web app that utilizes Mongoose and Cheerio to scrape articles from news sites.</div>
+        <a class="news-image-banner button waves-effect waves-light btn orange accent-2" href="/getarticles">
+            <i class="material-icons right">arrow_forward</i>Get news</a>
         <img src="/assets/images/cup-of-coffee.png" alt="newspaper, coffee cup, and eyeglasses sitting on a table" srcset="">
     </div>
 </div>
 
-<div class="row">
-    <div class="col s12 m12 l12">
-
-        <div class="returned-articles">
-            {{#each article}} {{> news_card}} {{/each}}
+{{#if article}}
+<div class="block">
+    <nav class="pushpin-nav orange accent-2">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">News you can use</a>
+            <ul class="right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/getsavedarticles">Saved Articles</a></li>
+                <li><a href="https://www.aljazeera.com/news/">News Source</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row content">
+        <div class="col s12 m12 l12">
+            <div class="returned-articles">
+                {{#each article}} {{> news_card}} {{/each}}
+            </div>
         </div>
     </div>
 </div>
+{{/if}}

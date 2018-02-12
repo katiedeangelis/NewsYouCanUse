@@ -2,6 +2,11 @@
 //                             Dependencies & Variables                              //
 ///////////////////////////////////////////////////////////////////////////////////////
 
+// Pushpin header for my saved articles & home links
+$('.pushpin-nav').pushpin({
+    top: $('.block').offset().top
+});
+
 // Whenever someone clicks a save button
 $(document).on("click", ".material-icons", function () {
     let card = $(this).closest(".card");
